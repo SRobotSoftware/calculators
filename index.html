@@ -12,55 +12,187 @@
 
     <!--Site container-->
     <div class="container-fluid">
-        
+
         <!--KM to Miles calculator-->
         <div class="container">
             <div class="panel panel-primary">
                 <div class="panel-heading">KM to Miles</div>
-                <div class="panel-body">{{1+1}}</div>
+                <div class="panel-body">
+                    <div class="col-xs-6">
+                        <fieldset>
+                            <input type="text" ng-model="cc.km" placeholder="1" class="text-right" ng-value="{{cc.km | number:4}}">
+                            <span>KM </span>
+                        </fieldset>
+                        <fieldset disabled>
+                            <input type="text" placeholder="0.6214" class="text-right" value="{{cc.miles | number:4}}">
+                            <span>Miles</span>
+                        </fieldset>
+                        <button ng-click="cc.calcMiles()" class="btn btn-success">Calculate Miles</button>
+                    </div>
+                    <div class="col-xs-6">
+                        <fieldset disabled>
+                            <input type="text" placeholder="1" class="text-right" value="{{cc.km | number:4}}">
+                            <span>KM </span>
+                        </fieldset>
+                        <fieldset>
+                            <input type="text" ng-model="cc.miles" placeholder="0.6214" class="text-right" ng-value="{{cc.miles | number:4}}">
+                            <span>Miles</span>
+                        </fieldset>
+                        <button ng-click="cc.calcKM()" class="btn btn-success">Calculate KM</button>
+                    </div>
+                </div>
             </div>
         </div>
-        
+
         <!--Fahrenheit to Celsius calculator-->
         <div class="container">
             <div class="panel panel-primary">
                 <div class="panel-heading">Fahrenheit to Celsius</div>
-                <div class="panel-body">{{1+1}}</div>
+                <div class="panel-body">
+                    <div class="col-xs-6">
+                        <fieldset>
+                            <input ng-model="cc.df" type="text" class="text-right" value="{{cc.df}}">
+                            <span>Fahrenheit</span>
+                        </fieldset>
+                        <fieldset disabled>
+                            <input type="text" class="text-right" value="{{cc.dc}}">
+                            <span>Celsius</span>
+                        </fieldset>
+                        <button ng-click="cc.calcDC()" class="btn btn-success">Calculate Celsius</button>
+                    </div>
+                    <div class="col-xs-6">
+                        <fieldset disabled>
+                            <input type="text" class="text-right" value="{{cc.df}}">
+                            <span>Fahrenheit</span>
+                        </fieldset>
+                        <fieldset>
+                            <input ng-model="cc.dc" type="text" class="text-right" value="{{cc.dc}}">
+                            <span>Celsius</span>
+                        </fieldset>
+                        <button ng-click="cc.calcDF()" class="btn btn-success">Calculate Fahrenheit</button>
+                    </div>
+                </div>
             </div>
         </div>
-        
+
         <!--Pounds to Kilograms calculator-->
         <div class="container">
             <div class="panel panel-primary">
                 <div class="panel-heading">Pounds to Kilograms</div>
-                <div class="panel-body">{{1+1}}</div>
+                <div class="panel-body">
+                    <div class="col-xs-6">
+                        <fieldset>
+                            <input ng-model="cc.lb" type="text" class="text-right" value="{{cc.lb}}">
+                            <span>Pounds</span>
+                        </fieldset>
+                        <fieldset disabled>
+                            <input type="text" class="text-right" value="{{cc.kg}}">
+                            <span>Kilograms</span>
+                        </fieldset>
+                        <button ng-click="cc.calcKG()" class="btn btn-success">Calculate Kilograms</button>
+                    </div>
+                    <div class="col-xs-6">
+                        <fieldset disabled>
+                            <input type="text" class="text-right" value="{{cc.lb}}">
+                            <span>Pounds</span>
+                        </fieldset>
+                        <fieldset>
+                            <input ng-model="cc.kg" type="text" class="text-right" value="{{cc.kg}}">
+                            <span>Kilograms</span>
+                        </fieldset>
+                        <button ng-click="cc.calcLB()" class="btn btn-success">Calculate Pounds</button>
+                    </div>
+                </div>
             </div>
         </div>
-        
+
         <!--Inches to Feet calculator-->
         <div class="container">
             <div class="panel panel-primary">
                 <div class="panel-heading">Inches to Feet</div>
-                <div class="panel-body">{{1+1}}</div>
+                <div class="panel-body">
+                    <div class="col-xs-6">
+                        <fieldset>
+                            <input ng-model="cc.in" type="text" class="text-right" value="{{cc.in}}">
+                            <span>Inches</span>
+                        </fieldset>
+                        <fieldset disabled>
+                            <input type="text" class="text-right" value="{{cc.ft}}">
+                            <span>Feet</span>
+                        </fieldset>
+                        <button ng-click="cc.calcFT()" class="btn btn-success">Calculate Feet</button>
+                    </div>
+                    <div class="col-xs-6">
+                        <fieldset disabled>
+                            <input type="text" class="text-right" value="{{cc.in}}">
+                            <span>Inches</span>
+                        </fieldset>
+                        <fieldset>
+                            <input ng-model="cc.ft" type="text" class="text-right" value="{{cc.ft}}">
+                            <span>Feet</span>
+                        </fieldset>
+                        <button ng-click="cc.calcIN()" class="btn btn-success">Calculate Inches</button>
+                    </div>
+                </div>
             </div>
         </div>
-        
+
         <!--BMI calculator-->
         <div class="container">
             <div class="panel panel-primary">
                 <div class="panel-heading">BMI</div>
-                <div class="panel-body">{{1+1}}</div>
+                <div class="panel-body">
+                    <div class="col-xs-6 col-xs-offset-3">
+                        <fieldset>
+                            <input ng-model="cc.weight" type="text" class="text-right" value="{{cc.weight}}">
+                            <span>Weight</span>
+                        </fieldset>
+                        <fieldset>
+                            <input ng-model="cc.height" type="text" class="text-right" value="{{cc.height}}">
+                            <span>Height (in inches)</span>
+                        </fieldset>
+                        <fieldset disabled>
+                            <input type="text" class="text-right" value="{{cc.bmi}}">
+                            <span>BMI</span>
+                        </fieldset>
+                        <button ng-click="cc.calcBMI()" class="btn btn-success">Calculate BMI</button>
+                    </div>
+                </div>
             </div>
         </div>
-        
+
         <!--Payment calculator-->
         <div class="container">
             <div class="panel panel-primary">
                 <div class="panel-heading">Payment</div>
-                <div class="panel-body">{{1+1}}</div>
+                <div class="panel-body">
+                    <div class="col-xs-6 col-xs-offset-3">
+                        <fieldset>
+                            <input ng-model="cc.loanAmount" type="text" class="text-right">
+                            <span>Loan Amount</span>
+                        </fieldset>
+                        <fieldset>
+                            <input ng-model="cc.interest" type="text" class="text-right">
+                            <span>Interest</span>
+                        </fieldset>
+                        <fieldset>
+                            <input ng-model="cc.roI" type="text" class="text-right">
+                            <span>Rate of Interest</span>
+                        </fieldset>
+                        <fieldset>
+                            <input ng-model="cc.nPayments" type="text" class="text-right">
+                            <span>Number of Payments</span>
+                        </fieldset>
+                        <fieldset disabled>
+                            <input type="text" class="text-right" value="{{cc.paymentAmount}}">
+                            <span>Payment Amount</span>
+                        </fieldset>
+                        <button class="btn btn-success" ng-click="cc.calcPayments()">Calculate Payments</button>
+                    </div>
+                </div>
             </div>
         </div>
-        
+
         <!--Close Site container-->
     </div>
 
