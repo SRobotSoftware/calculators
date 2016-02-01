@@ -1,17 +1,17 @@
 app.controller('CalculatorController', function () {
 
     this.test = true;
-    this.km = 1;
-    this.miles = this.km * 0.6214;
-    this.df = 1;
-    this.dc = this.df - 32 / 1.8;
+    this.km = 10;
+    this.miles = (this.km * 0.6214).toFixed(4);
+    this.df = 32;
+    this.dc = (this.df - 32) / 1.8;
     this.kg = 1;
-    this.lb = this.kg * 2.2046;
+    this.lb = (this.kg * 2.2046).toFixed(4);
     this.in = 12;
-    this.ft = this.in / 12;
+    this.ft = (this.in / 12).toFixed(4);
     this.weight = 100;
     this.height = 72;
-    this.bmi = (this.weight / (this.height ^ 2)) * 703;
+    this.bmi = ((this.weight / (Math.pow(this.height,2))) * 703).toFixed(4);
     this.calcMiles = function () {
         this.miles = (this.km * 0.6214).toFixed(4);
     }
@@ -37,7 +37,7 @@ app.controller('CalculatorController', function () {
         this.ft = (this.in / 12).toFixed(4);
     }
     this.calcBMI = function () {
-        this.bmi = ((this.weight / (this.height ^ 2)) * 703).toFixed(4);
+        this.bmi = ((this.weight / (Math.pow(this.height,2))) * 703).toFixed(4);
     }
     this.principal = 1000;
     this.interest = 12.5;
