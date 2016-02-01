@@ -164,30 +164,26 @@
         <!--Payment calculator-->
         <div class="container">
             <div class="panel panel-primary">
-                <div class="panel-heading">Payment</div>
+                <div class="panel-heading">Compound Interest</div>
                 <div class="panel-body">
                     <div class="col-xs-6 col-xs-offset-3">
                         <fieldset>
-                            <input ng-model="cc.loanAmount" type="text" class="text-right">
-                            <span>Loan Amount</span>
+                            <input ng-model="cc.principal" type="text" class="text-right">
+                            <span>Principal Amount</span>
                         </fieldset>
                         <fieldset>
                             <input ng-model="cc.interest" type="text" class="text-right">
-                            <span>Interest</span>
-                        </fieldset>
-                        <fieldset>
-                            <input ng-model="cc.roI" type="text" class="text-right">
-                            <span>Rate of Interest</span>
+                            <span>% Interest per period</span>
                         </fieldset>
                         <fieldset>
                             <input ng-model="cc.nPayments" type="text" class="text-right">
-                            <span>Number of Payments</span>
+                            <span># of Interest Periods</span>
                         </fieldset>
                         <fieldset disabled>
-                            <input type="text" class="text-right" value="{{cc.paymentAmount}}">
-                            <span>Payment Amount</span>
+                            <input type="text" class="text-right" value="{{cc.totalBalance}}">
+                            <span>Total Balance</span>
                         </fieldset>
-                        <button class="btn btn-success" ng-click="cc.calcPayments()">Calculate Payments</button>
+                        <button class="btn btn-success" ng-click="cc.calcPayments()">Calculate Your total Balance</button>
                     </div>
                 </div>
             </div>

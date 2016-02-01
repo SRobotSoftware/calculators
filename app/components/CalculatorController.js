@@ -39,34 +39,20 @@ app.controller('CalculatorController', function () {
     this.calcBMI = function () {
         this.bmi = ((this.weight / (this.height ^ 2)) * 703).toFixed(4);
     }
-    this.loanAmount = 1000;
+    this.principal = 1000;
     this.interest = 12.5;
-    this.roI = 0;
-    this.nPayments = 12;
-    this.paymentAmount = 0;
+    this.nPayments = 1;
+    this.totalBalance = 0;
     this.calcPayments = function () {
-        
-        if (this.roI === 0) {
-            // monthly
-            this.roI =  this.interest / 1200;
-        }
-        
-        this.paymentAmount = (this.roI * this.loanAmount) / (1 - (1 + this.roI) - this.nPayments);
+        this.interest /= 100;
+        this.totalBalance = Math.round(this.principal*Math.pow(1+this.interest,this.nPayments));
         /*
-        P = ( r * A ) / ( 1 - (1+r)-N) 
-        Where, 
-        P = Payment Amount 
-        A = Loan Amount  
-        r = Rate of Interest 
-        (compounded) 
-        N = Number of Payments  Rate of Interest Compounded is,  
-        If Monthly,  
-        r = i / 1200 and N = n * 12 
-        If Quarterly,  
-        r = i / 400 and N = n * 4 
-        If Half yearly,  
-        r = i / 200 and N = n * 2 
-        If Yearly,  r = i / 100 and N = n
+        B = P(1+r)^n
+
+        B final balance
+        P principal amount
+        r rate of interest per period
+        n number of interest periods
         */
     }
 
